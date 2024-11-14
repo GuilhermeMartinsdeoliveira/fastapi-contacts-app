@@ -1,29 +1,10 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"message": "OLá, está é minha api!"}
-
-
-from . import models, database
-
-models.Base.metadata.create_all(bind=database.engine)
-
-
-from . import models, database
-
-models.Base.metadata.create_all(bind=database.engine)
-
-from . import models, database
-
-models.Base.metadata.create_all(bind=database.engine)
-
 
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from . import models, database
+#rodar deployado
+#from . import models, database
+# rodar localmente
+import models, database
 
 models.Base.metadata.create_all(bind=database.engine)
 
@@ -31,7 +12,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the FastAPI Contacts App!"}
+    return {"message": "OLÀ eu estou rodnado"}
 
 # Função para gerenciar as sessões do banco de dados
 def get_db():
@@ -86,7 +67,5 @@ def get_contact(contact_id: int, db: Session = Depends(get_db)):
     if not contact:
         raise HTTPException(status_code=404, detail="Contact not found")
     return contact
-
-
 
 

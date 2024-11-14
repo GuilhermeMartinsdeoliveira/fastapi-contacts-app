@@ -2,6 +2,9 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 # Não esquecr de importar o database.by e apagra senao vai dar conflito 
+#rodar deployado
+# from .database import Base 
+# rodar localmente
 from database import Base 
 
 # Base = declarative_base() -- já está declarada no model.py
